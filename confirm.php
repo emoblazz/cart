@@ -10,6 +10,7 @@
 		$order_id=mysqli_insert_id($con);	
 
 	 $query=mysqli_query($con,"SELECT * FROM cart natural join product where cust_id='$session_id'")or die(mysqli_error($con));
+	 		$grand=0;
 			while($row=mysqli_fetch_array($query)){
 				$prod_id=$row['prod_id'];
 				$price=$row['prod_price'];

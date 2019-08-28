@@ -1,13 +1,3 @@
-<?php
- session_start(); 
-//Check whether the session variable SESS_MEMBER_ID is present or not
-if (!isset($_SESSION['id']) || (trim($_SESSION['id']) == '')) { ?>
-<script>
-window.location = "index.php";
-</script>
-<?php }?>
-
-<?php //include "dist/includes/session.php";?>
 <!DOCTYPE html>
 <!-- 
 Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.2.0
@@ -28,7 +18,12 @@ License: You must have a valid license purchased only from themeforest (the abov
 
 <!-- Head BEGIN -->
 <?php include "dist/includes/shop-head.php";?>
-<?php //include "dist/includes/session.php";?>
+<?php if (!isset($_SESSION['id']) || (trim($_SESSION['id']) == '')) { ?>
+<script>
+window.location = "index.php";
+</script>
+<?php }?>
+
 <!-- Head END -->
 
 <!-- Body BEGIN -->

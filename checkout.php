@@ -60,6 +60,27 @@ License: You must have a valid license purchased only from themeforest (the abov
             <h1>Shopping cart</h1>
             <div class="goods-page">
               <div class="goods-data clearfix">
+                <div class="col-md-12">  
+<?php
+  $query1=mysqli_query($con,"SELECT * FROM `order` natural join order_details natural join product where cust_id='$session_id' order by order_id DESC LIMIT 0,1")or die(mysqli_error($con));
+                          $row1=mysqli_fetch_array($query1);
+?>                  
+                  <div class="row invoice-info">
+                    <!-- /.col -->
+                    <div class="col-sm-6 invoice-col">
+                      <b>Order # <?php echo $row1['order_id'];?></b><br>
+                      <b>Order Date: </b> <?php echo $row1['order_date'];?><br>
+                      <br>
+                    </div>                     
+                    <!-- /.col -->
+                    <div class="col-sm-6 invoice-col">
+                      <b>Order Status: </b><?php echo $row1['order_status'];?><br>
+                      <b>Payment Due: </b> <?php echo $row1['order_total'];?><br>
+                    </div>
+                    <!-- /.col -->
+                    
+                  </div>
+                  <hr>
                 <div class="table-wrapper-responsive">
                 <table summary="Shopping cart">
                   <tr>
