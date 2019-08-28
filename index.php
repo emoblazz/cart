@@ -139,6 +139,41 @@ License: You must have a valid license purchased only from themeforest (the abov
       </div>
     </div>
 
+    <div class="modal fade" id="myModal">
+                          <div class="modal-dialog">
+                            <div class="modal-content" style="text-align: center;">
+                              <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title">Disclaiming</h4>
+                              </div>
+                              <form role="form">
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                      <p>"Thank you for visiting our online grocery store but this is only for people who they have taken their order among the store once again. Thank You"<br>
+                                        by: Fatima Cornel
+                                      </p>
+                                    </div>
+                                    <div class="form-group">
+                                      <h4>Location </h4>
+                                      <p>
+                                          Victorias Commercial Center (Shopping Malls)<br>
+                                        @ Yap Quina Street, Victorias City, Negros Occidental, Philippines<br>
+
+                                      "Cornel Grocery Store at the left side"
+                                      </p>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Close</button>
+                                </div>
+                            </form>
+                            </div>
+                            <!-- /.modal-content -->
+                          </div>
+                          <!-- /.modal-dialog -->
+                        </div>
+                        <!-- /.modal --> 
     <!-- BEGIN BRANDS -->
     <?php include "dist/includes/shop-brands.php";?>
     <!-- END BRANDS -->
@@ -159,6 +194,11 @@ License: You must have a valid license purchased only from themeforest (the abov
     <!-- BEGIN CORE PLUGINS (REQUIRED FOR ALL PAGES) -->
     <?php include "dist/includes/shop-script.php";?>
     <!-- END PAGE LEVEL JAVASCRIPTS -->
+    <script type="text/javascript">
+    $(window).on('load',function(){
+        $('#myModal').modal('show');
+    });
+</script>
 </body>
 <!-- END BODY -->
 </html>
