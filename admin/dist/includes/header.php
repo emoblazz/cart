@@ -35,7 +35,7 @@
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">Update Profile</a>
+                  <a href="account.php" class="btn btn-default btn-flat">Update Profile</a>
                 </div>
                 <div class="pull-right">
                   <a href="logout.php" class="btn btn-warning btn-flat">Sign out</a>
