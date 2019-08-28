@@ -46,8 +46,7 @@ License: You must have a valid license purchased only from themeforest (the abov
             <ul class="list-group margin-bottom-25 sidebar-menu">
               <li class="list-group-item clearfix"><a href="login.php"><i class="fa fa-angle-right"></i> Login</a></li>
               <li class="list-group-item clearfix"><a href="register.php"><i class="fa fa-angle-right"></i> Register</a></li>
-              <li class="list-group-item clearfix"><a href="password.php"><i class="fa fa-angle-right"></i> Restore Password</a></li>
-              <li class="list-group-item clearfix"><a href="account.php"><i class="fa fa-angle-right"></i> My account</a></li>
+              
             </ul>
           </div>
           <!-- BEGIN CONTENT -->

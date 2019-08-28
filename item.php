@@ -95,7 +95,7 @@ License: You must have a valid license purchased only from themeforest (the abov
                   if (isset($session_id))
                     echo "<a href='add_cart.php?prod_id=$rowp[prod_id]' class='btn btn-primary add2cart'>Add to cart</a>";
                   else
-                    echo "<a href='' class='btn btn-default add2cart'>Login to Add</a>";
+                    echo "<a href='login.php' class='btn btn-default add2cart'>Login to Add</a>";
                   ?>
                   </div>
                   

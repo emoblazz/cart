@@ -1,9 +1,17 @@
 <?php
+session_start(); 
+//Check whether the session variable SESS_MEMBER_ID is present or not
+if (!isset($_SESSION['id']) || (trim($_SESSION['id']) == '')) {
+echo "<script>
+window.location = 'index.php';
+</script>";
+}
+
      include 'dist/includes/dbcon.php';     
      if (isset($_GET['prod_id']))
 		{
 		$prod_id=$_GET['prod_id'];
-		
+		$session_id=$_SESSION['id'];
 		$queryc=mysqli_query($con,"SELECT * FROM cart where prod_id='$prod_id' and cust_id='$session_id'")or die(mysqli_error($con));
 			$rowc=mysqli_num_rows($queryc);
 			$row1=mysqli_fetch_array($queryc);

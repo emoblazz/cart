@@ -1,3 +1,11 @@
+<?php
+ session_start(); 
+//Check whether the session variable SESS_MEMBER_ID is present or not
+if (!isset($_SESSION['id']) || (trim($_SESSION['id']) == '')) { ?>
+<script>
+window.location = "index.php";
+</script>
+<?php }?>
 <!DOCTYPE html>
 <!-- 
 Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.2.0
