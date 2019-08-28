@@ -69,14 +69,14 @@
                             $start=date("Y/m/d",strtotime($date[0]));
                             $end=date("Y/m/d",strtotime($date[1]));
 
-                        $query=mysqli_query($con,"SELECT * FROM `order` natural join customer where payment_status='paid' and order_date >= DATE_FORMAT('" . $start . "', '%Y%m%d') AND order_date <=  DATE_FORMAT('" . $end . "', '%Y%m%d')")or die(mysqli_error($con));
+
+                        $query=mysqli_query($con,"SELECT SUM(order_total) as total,DATE_FORMAT(order_date,'%Y/%m/%d') as date FROM `order` natural join customer where payment_status='paid' and order_date >= DATE_FORMAT('" . $start . "', '%Y%m%d') AND order_date <=  DATE_FORMAT('" . $end . "', '%Y%m%d') group by date")or die(mysqli_error($con));
                           while ($row=mysqli_fetch_array($query)){
-                            $id=$row['order_id'];					
                          
                       ?>    
                       <tr class="box box-success">
-                          <td class="text-aqua"><?php echo $row['order_date'];?></td>
-                          <td class="text-aqua"><?php echo $row['order_total'];?></td>
+                          <td class="text-aqua"><?php echo $row['date'];?></td>
+                          <td class="text-aqua"><?php echo $row['total'];?></td>
                       </tr> 
                                     
                       <?php }}?>

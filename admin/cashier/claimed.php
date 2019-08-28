@@ -7,7 +7,7 @@
     <?php include '../dist/includes/header.php';?>
     
     <!-- Left side column. contains the logo and sidebar -->
-    <?php include '../dist/includes/aside.php';?>
+    <?php include '../dist/includes/aside1.php';?>
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
