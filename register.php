@@ -68,7 +68,7 @@ License: You must have a valid license purchased only from themeforest (the abov
                       <div class="form-group">
                         <label for="lastname" class="col-lg-4 control-label">Mobile # <span class="require">*</span></label>
                         <div class="col-lg-8">
-                          <input type="text" class="form-control" id="lastname" name="contact">
+                          <input type="text" class="form-control" id="lastname" name="contact" placeholder="639xxxxxxxxx">
                         </div>
                       </div>
                       <div class="form-group">

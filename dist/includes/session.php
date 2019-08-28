@@ -1,11 +1,6 @@
 <?php 
 session_start();
-//Check whether the session variable SESS_MEMBER_ID is present or not
-if (!isset($_SESSION['id']) || (trim($_SESSION['id']) == '')) { 
-echo "<script>
-window.location = 'index.php';
-</script>";
-}
+
 include "dist/includes/dbcon.php";
 if (isset($_SESSION['id']))
 {

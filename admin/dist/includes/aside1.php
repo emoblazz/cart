@@ -15,20 +15,20 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
-        <li class="active"><a href="home.php"><i class="fa fa-dashboard text-red"></i> <span>Dashboard</span></a></li>
+        <li class="active"><a href="home.php"><i class="fa fa-dashboard text-orange"></i> <span>Dashboard</span></a></li>
         <li>
           <a href="incoming.php">
-            <i class="fa fa-table text-red"></i> <span>Pending Orders</span>
+            <i class="fa fa-table text-orange"></i> <span>Pending Orders</span>
           </a>
         </li>
         <li>
           <a href="claimed.php">
-            <i class="fa fa-table text-red"></i> <span>Claimed Orders</span>
+            <i class="fa fa-table text-orange"></i> <span>Claimed Orders</span>
           </a>
         </li>
         <li>
           <a href="sales.php">
-            <i class="fa fa-table text-red"></i> <span>Sales Reports</span>
+            <i class="fa fa-table text-orange"></i> <span>Sales Reports</span>
           </a>
         </li>
       </ul>

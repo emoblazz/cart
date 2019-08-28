@@ -57,7 +57,7 @@
                     <?php								
                       $query=mysqli_query($con,"SELECT * FROM `product` natural join damaged order by declared_date desc")or die(mysqli_error($con));
                         while ($row=mysqli_fetch_array($query)){
-                          $id=$row['damaged_id'];					
+                       //   $id=$row['damaged_id'];					
                          
                     ?>    
                     <tr>

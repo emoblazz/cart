@@ -2,9 +2,9 @@
     <!-- Logo -->
     <a href="index2.html" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>A</b>LT</span>
+      <span class="logo-mini"><b>C</b>S</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Admin</b>LTE</span>
+      <span class="logo-lg"><b>Cornel</b>Store</span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -15,8 +15,6 @@
 
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
-          
-        
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -40,7 +38,7 @@
                   <a href="#" class="btn btn-default btn-flat">Update Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="logout.php" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="logout.php" class="btn btn-warning btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>

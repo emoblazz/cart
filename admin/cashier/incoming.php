@@ -42,7 +42,7 @@
                     <table class="table table-hover">
                       <tbody>
                       <tr>
-                        <th>Ready</th>
+                        <th>Mark As Ready</th>
                         <th>Order ID</th>
                         <th>Order Date</th>
                         <th>Customer Name</th>
@@ -55,7 +55,7 @@
                          
                       ?>    
                       <tr class="box box-success">
-                          <td><a class="btn btn-success" href="order_functions.php?order_id=<?php echo $id;?>&status=done"><i class="fa fa-truck text-danger"></i></a></td>
+                          <td><a class="btn btn-warning" href="order_functions.php?order_id=<?php echo $id;?>&status=done"><i class="fa fa-truck text-danger"></i> Mark as Done</a></td>
                           <td class="text-aqua">OR<?php echo $row['order_id'];?> |
                             
                           </td>

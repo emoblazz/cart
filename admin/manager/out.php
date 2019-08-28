@@ -52,7 +52,7 @@
                     <?php								
                       $query=mysqli_query($con,"SELECT * FROM `product` natural join category where prod_qty<=0 order by prod_qty")or die(mysqli_error($con));
                         while ($row=mysqli_fetch_array($query)){
-                          $id=$row['stockin_id'];					
+                         // $id=$row['stockin_id'];					
                     ?>    
                     <tr>
                         <td><?php echo $row['prod_name'];?></td>

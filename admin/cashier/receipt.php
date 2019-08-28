@@ -44,9 +44,14 @@
 
         <section class="col-lg-12 connectedSortable">
         <div class="row col-md-8">
-          <h1 style="text-align:center">
-        Coronel Online Grocery Store <input class="btn-print btn-primary" type="button" name="print" value="Print" onclick="window.print();window.location.href='home.php';">
-      </h1>
+          <h3 style="text-align:center">
+        Coronel Online Grocery Store <input class="btn-print btn-warning" type="button" name="print" value="Print" onclick="window.print();window.location.href='home.php';">
+      </h3>
+      <h5 style="text-align: center;">Victorias Commercial Center (Shopping Malls)<br>
+Yap Quina Street, Victorias City, Negros Occidental, Philippines
+</h5>
+      <h3 style="text-align: right;">Order # <?php echo $row['order_id'];?>
+</h3>
       
           <div class="col-xs-12">
             <div class="box">

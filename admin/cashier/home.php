@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <?php include '../dist/includes/head.php';?>
-<body class="hold-transition skin-black-light sidebar-mini">
+<body class="hold-transition sidebar-mini skin-black">
 <div class="wrapper">
   <?php include '../dist/includes/header.php';?>
   
@@ -56,7 +56,7 @@
                             else
                             {
                               $status="Make Payment";
-                              $color="danger";
+                              $color="warning";
                             }
                       ?>
                 <tr>

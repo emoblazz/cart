@@ -14,7 +14,7 @@
     <section class="content-header">
       <h1>
         Stockin 
-        <a class="btn btn-app btn-primary text-blue" data-toggle="modal" data-target="#modal-add">
+        <a class="btn btn-app btn-warning text-orange" data-toggle="modal" data-target="#modal-add">
             <i class="fa fa-plus-square"></i> ADD
         </a>
        
@@ -53,7 +53,7 @@
                       <th>Stockin Qty</th>
                       <th>Stockin Date</th>
                       <th>Expiry Date</th>
-                      <th>Action</th>
+                      
                     </tr>
                     <?php								
                       $query=mysqli_query($con,"SELECT * FROM stockin natural join product order by stockin_date desc")or die(mysqli_error($con));
@@ -65,10 +65,7 @@
                         <td><?php echo $row['stockin_qty'];?></td>
                         <td><?php echo $row['stockin_date'];?></td>
                         <td><?php echo $row['expiry'];?></td>
-                        <td>
-                          <a type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-<?php echo $id;?>">
-                            <i class="fa fa-pencil text-blue"></i></a>
-                        </td>
+                       
                     </tr>  
                     <!-- Modal Update-->
                     <div class="modal fade" id="modal-<?php echo $id;?>">
@@ -97,7 +94,7 @@
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-primary" name="update">Save changes</button>
+                                <button type="submit" class="btn btn-warning" name="update">Save changes</button>
                               </div>
                           </form>
                           </div>
@@ -158,7 +155,7 @@
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-primary" name="add">Save</button>
+                                <button type="submit" class="btn btn-warning" name="add">Save</button>
                               </div>
                           </form>
                           </div>

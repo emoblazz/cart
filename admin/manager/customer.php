@@ -29,7 +29,7 @@
         <section class="content">
           <div class="row">
             <div class="col-xs-12 col-md-12">
-              <div class="box box-primary">
+              <div class="box box-warning">
                 <div class="box-header">
                   <h3 class="box-title">Customer List</h3>
                 </div>
@@ -58,7 +58,7 @@
                         <td><?php echo $row['date_registered'];?></td>
                         <td>
                           <a type="button" class="btn btn-default" href="transaction.php?cid=<?php echo $id;?>">
-                            <i class="fa fa-eye text-blue"></i></a>
+                            <i class="fa fa-eye text-orange"></i></a>
                         </td>
                     </tr>  
                     <?php }?>

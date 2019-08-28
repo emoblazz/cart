@@ -68,9 +68,9 @@ License: You must have a valid license purchased only from themeforest (the abov
               <div class="col-md-4 col-sm-6 col-xs-12">
                 <div class="product-item">
                   <div class="pi-img-wrapper">
-                    <img src="assets/frontend/pages/img/products/model1.jpg" class="img-responsive" alt="<?php echo $rowp['prod_name'];?>">
+                    <img src="dist/uploads/<?php echo $rowp['prod_pic'];?>" class="img-responsive" alt="<?php echo $rowp['prod_name'];?>" style="width:250px;height: 300px">
                     <div>
-                      <a href="assets/frontend/pages/img/products/model1.jpg" class="btn btn-default fancybox-button">Zoom</a>
+                      <a href="dist/uploads/<?php echo $rowp['prod_pic'];?>" class="btn btn-default fancybox-button">Zoom</a>
                       <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">View</a>
                     </div>
                   </div>
@@ -86,7 +86,7 @@ License: You must have a valid license purchased only from themeforest (the abov
               <div class="row">
                 <div class="col-md-6 col-sm-6 col-xs-3">
                   <div class="product-main-image">
-                    <img src="assets/frontend/pages/img/products/model7.jpg" alt="Cool green dress with red bell" class="img-responsive">
+                    <img src="dist/uploads/<?php echo $rowp['prod_pic'];?>" alt="Cool green dress with red bell" class="img-responsive">
                   </div>
                 
                 </div>
@@ -94,10 +94,10 @@ License: You must have a valid license purchased only from themeforest (the abov
                   <h2><?php echo $rowp['prod_name'];?></h2>
                   <div class="price-availability-block clearfix">
                     <div class="price">
-                      <strong><span>$</span><?php echo $rowp['prod_price'];?></strong>
+                      <strong><span>P</span><?php echo $rowp['prod_price'];?></strong>
                     </div>
                     <div class="availability">
-                      Availability: <strong>In Stock</strong>
+                       Available: <strong><?php echo $rowp['prod_qty'];?></strong>
                     </div>
                   </div>
                   <div class="description">
@@ -105,15 +105,15 @@ License: You must have a valid license purchased only from themeforest (the abov
                   </div>
                   </div>
                   <div class="product-page-cart">
-                    <div class="product-quantity">
-                        <input id="product-quantity" type="text" value="1" readonly name="product-quantity" class="form-control input-sm">
-                    </div>
-                    <button class="btn btn-primary" type="submit">Add to cart</button>
-                    <a href="item.php?item=<?php echo $rowp['prod_id'];?>" class="btn btn-default">More details</a>
+                     <?php 
+                  if (isset($session_id))
+                    echo "<a href='add_cart.php?prod_id=$rowp[prod_id]' class='btn btn-primary add2cart'>Add to cart</a>";
+                  else
+                    echo "<a href='login.php' class='btn btn-default add2cart'>Login to Add</a>";
+                  ?>
                   </div>
                 </div>
 
-                <div class="sticker sticker-sale"></div>
               </div>
             </div>
     

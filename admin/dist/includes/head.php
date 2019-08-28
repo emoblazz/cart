@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="../dist/css/AdminLTE.min.css">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
-  <link rel="stylesheet" href="../dist/css/skins/_all-skins.min.css">
+  <link rel="stylesheet" href="../dist/css/skins/skin-black.min.css">
   <!-- Select2 -->
   <link rel="stylesheet" href="../bower_components/select2/dist/css/select2.min.css">
   <!-- Morris chart -->

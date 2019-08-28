@@ -1,8 +1,5 @@
 <?php 
-session_start();
-
 include('dist/includes/dbcon.php');
-
 
 $user=$_POST['username'];
 $pass=$_POST['password'];

@@ -14,7 +14,7 @@
     <section class="content-header">
       <h1>
         Product
-        <a class="btn btn-app btn-primary text-blue" data-toggle="modal" data-target="#modal-add">
+        <a class="btn btn-app btn-warning text-orange" data-toggle="modal" data-target="#modal-add">
             <i class="fa fa-plus-square"></i> ADD
           </a>
       </h1>
@@ -31,7 +31,7 @@
         <section class="content">
           <div class="row">
             <div class="col-xs-12 col-md-12">
-              <div class="box box-primary">
+              <div class="box box-warning">
                 <div class="box-header">
                   <h3 class="box-title">Product List</h3>
                   <div class="box-tools">
@@ -73,7 +73,7 @@
                         <td><?php echo $row['reorder'];?></td>
                         <td>
                           <a type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-<?php echo $id;?>">
-                            <i class="fa fa-pencil text-blue"></i></a>
+                            <i class="fa fa-pencil text-orange"></i></a>
                         </td>
                     </tr>  
                     <!-- Modal Update-->
@@ -124,7 +124,7 @@
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-primary" name="update">Save changes</button>
+                                <button type="submit" class="btn btn-warning" name="update">Save changes</button>
                               </div>
                           </form>
                           </div>
@@ -187,7 +187,7 @@
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-primary" name="add">Save</button>
+                                <button type="submit" class="btn btn-warning" name="add">Save</button>
                               </div>
                           </form>
                           </div>

@@ -91,7 +91,7 @@
                                   </div>
                               </div>
                               <div class="modal-footer">
-                                <button type="submit" class="btn btn-block btn-primary" name="pay">PAY</button>
+                                <button type="submit" class="btn btn-block btn-warning" name="pay">PAY</button>
                               </div>
                           </form>
               

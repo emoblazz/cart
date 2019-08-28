@@ -1,5 +1,4 @@
-
-  <!DOCTYPE html>
+<!DOCTYPE html>
   <html>
   <?php include '../dist/includes/head.php';?>
   <body class="hold-transition skin-black-light sidebar-mini">
@@ -30,7 +29,7 @@
           <section class="content">
             <div class="row">
               <div class="col-xs-12 col-md-12">
-                <div class="box box-primary">
+                <div class="box box-warning">
                   <div class="box-header">
                     <h3 class="box-title">Ready For Pickup Order List</h3>
                     <div class="box-tools">
@@ -61,7 +60,7 @@
                          
                       ?>    
                       <tr class="box box-success">
-                          <td><a class="btn btn-primary" href="order_functions.php?order_id=<?php echo $id;?>&status=done"><i class="fa fa-check text-danger"></i></a></td>
+                          <td><a class="btn btn-warning" href="order_functions.php?order_id=<?php echo $id;?>&status=done"><i class="fa fa-check text-danger"></i></a></td>
                           <td class="text-aqua">OR<?php echo $row['order_id'];?> |
                             
                           </td>
