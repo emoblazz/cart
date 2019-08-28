@@ -1,5 +1,4 @@
-
-  <!DOCTYPE html>
+<!DOCTYPE html>
   <html>
   <?php include '../dist/includes/head.php';?>
   <body class="hold-transition skin-black-light sidebar-mini">

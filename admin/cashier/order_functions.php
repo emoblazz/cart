@@ -15,7 +15,7 @@ if (isset($_REQUEST['status'])=="done")
 				            $order_date=$row['order_date'];
 
  				$date=date("M d, Y",strtotime($order_date));
-                $message="Dear $name. This is to remind you of your order dated $date with Order # $order_id is ready for pickup at Cornel Store. Cornel Grocery Store";
+                $message="Your order dated $date with Order No $order_id is ready for pickup at Cornel Store. Thank You";
                 $message= str_replace(' ', '%20', $message);
                 $ch = curl_init();
                 $url="https://rest.nexmo.com/sms/json?api_key=b2e5ffdd&api_secret=Oj29OnRbkN9QhjMF&to=$contact&from=CornelStore&text=$message";
