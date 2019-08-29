@@ -1,6 +1,6 @@
 <div class="header">
       <div class="container">
-        <a class="site-logo" href="index.php"><img src="assets/frontend/layout/img/logos/logo-shop-red.png" alt="Metronic Shop UI"></a>
+        <a class="site-logo" href="index.php"><img src="img/uploads/logo.png" alt="Cornel Grocery Store" style="height: 40px"></a>
 
         <a href="javascript:void(0);" class="mobi-toggler"><i class="fa fa-bars"></i></a>
         <?php 
