@@ -29,14 +29,7 @@ License: You must have a valid license purchased only from themeforest (the abov
 
     <!-- BEGIN HEADER -->
     <?php include "dist/includes/shop-header.php";?>
-    <?php
-//Check whether the session variable SESS_MEMBER_ID is present or not
-if (!isset($_SESSION['id']) || (trim($_SESSION['id']) == '')) { 
-echo "<script>
-window.location = 'index.php';
-</script>";
-}
-?>
+
     <!-- Header END -->
  
     <div class="main">
