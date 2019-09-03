@@ -18,6 +18,8 @@
 				$total=$qty*$price;
 				$grand=$grand+$total;
 
+				mysqli_query($con,"UPDATE `product` SET prod_qty=prod_qty - '$qty' where prod_id='$prod_id'")or die(mysqli_error($con)); 
+				
 				mysqli_query($con,"INSERT INTO order_details(order_id,prod_id,qty,price,total) 
 	     VALUES('$order_id','$prod_id','$qty','$price','$total')")or die(mysqli_error($con));       	
 			}
