@@ -97,7 +97,7 @@ License: You must have a valid license purchased only from themeforest (the abov
 ?>                   
                   <tr>
                     <td class="goods-page-image">
-                      <a href="javascript:;"><img src="assets/frontend/pages/img/products/model3.jpg" alt="Berry Lace Dress"></a>
+                      <a href="javascript:;"><img src="dist/uploads/<?php echo $row['prod_pic'];?>" alt="Berry Lace Dress"></a>
                     </td>
                     <td class="goods-page-description">
                       <h3><a href="javascript:;"><?php echo $row['prod_name'];?></a></h3>
