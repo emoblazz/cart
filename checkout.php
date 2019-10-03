@@ -64,6 +64,8 @@ License: You must have a valid license purchased only from themeforest (the abov
 <?php
   $query1=mysqli_query($con,"SELECT * FROM `order` natural join order_details natural join product where cust_id='$session_id' order by order_id DESC LIMIT 0,1")or die(mysqli_error($con));
                           $row1=mysqli_fetch_array($query1);
+
+                          $id=$row1['order_id'];
 ?>                  
                   <div class="row invoice-info">
                     <!-- /.col -->
@@ -92,7 +94,7 @@ License: You must have a valid license purchased only from themeforest (the abov
                     <th class="goods-page-total" colspan="2">Total</th>
                   </tr>
 <?php
-  $query=mysqli_query($con,"SELECT * FROM `order` natural join order_details natural join product where cust_id='$session_id' order by order_id DESC LIMIT 0,1")or die(mysqli_error($con));
+  $query=mysqli_query($con,"SELECT * FROM `order` natural join order_details natural join product where order_id='$id'")or die(mysqli_error($con));
                           while ($row=mysqli_fetch_array($query)){
 ?>                   
                   <tr>
