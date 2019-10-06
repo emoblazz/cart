@@ -64,7 +64,7 @@
                          
                     ?>    
                     <tr>
-                        <td><img class="profile-user-img img-responsive img-circle" src="../../dist/uploads/<?php echo $row['prod_pic'];?>" alt="Photo"></td>
+                        <td><img class="profile-user-img img-responsive img-circle" src="../../dist/uploads/<?php echo $row['prod_pic'];?>" style="height:100px ;width: 100px;" alt="Photo"></td>
                         <td><?php echo $row['prod_name'];?></td>
                         <td><?php echo $row['prod_desc'];?></td>
                         <td><?php echo $row['cat_name'];?></td>

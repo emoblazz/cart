@@ -62,7 +62,7 @@
                     <img src="dist/uploads/<?php echo $rowp['prod_pic'];?>" class="img-responsive" alt="<?php echo $rowp['prod_name'];?>" style="width:250px;height: 300px">
                     <div>
                       <a href="dist/uploads/<?php echo $rowp['prod_pic'];?>" class="btn btn-default fancybox-button">Zoom</a>
-                      <a href="#product-pop-up" class="btn btn-default fancybox-fast-view">View</a>
+                      <a href="#product-pop-up<?php echo $rowp['prod_id'];?>" class="btn btn-default fancybox-fast-view" data-target="#update<?php echo $rowp['prod_id'];?>">View</a>
                     </div>
                   </div>
                   <h3><a href="shop-item.html"><?php echo $rowp['prod_name'];?></a></h3>
@@ -77,7 +77,7 @@
               </div>
               
               <!-- BEGIN fast view of a product -->
-    <div id="product-pop-up" style="display: none; width: 700px;">
+    <div id="product-pop-up<?php echo $rowp['prod_id'];?>" style="display: none; width: 700px;">
             <div class="product-page product-pop-up">
               <div class="row">
                 <div class="col-md-6 col-sm-6 col-xs-3">

@@ -33,7 +33,7 @@
                   <div class="header-navigation-content">
                     <div class="row">
                       <div class="col-md-4 header-navigation-col">
-                        <a href="product-list.php?category=<?php echo $rowc['cat_name'];?>"><?php echo $rowc['cat_name'];?></a>
+                        <a href="product-list.php?category=<?php echo $rowc['cat_id'];?>"><?php echo $rowc['cat_name'];?></a>
                       </div>
                     </div>
                   </div>

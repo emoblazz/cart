@@ -78,7 +78,7 @@ else if (isset($_POST['update']))
                            }
                          }
           }
-     mysqli_query($con,"UPDATE product SET prod_name='$name',prod_desc='$desc',prod_price='$price',reorder='$reorder',prod_pic='$pic' where prod_id='$id'")
+     mysqli_query($con,"UPDATE product SET prod_name='$name',prod_desc='$desc',prod_price='$price',reorder='$reorder',prod_pic='$pic',cat_id='$category' where prod_id='$id'")
 	 or die(mysqli_error($con)); 
 
      //echo "<script type='text/javascript'>alert('Category data Successfully updated!');</script>";
