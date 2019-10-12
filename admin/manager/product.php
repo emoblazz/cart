@@ -74,6 +74,8 @@
                         <td>
                           <a type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-<?php echo $id;?>">
                             <i class="fa fa-pencil text-orange"></i></a>
+                          <a type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete-<?php echo $id;?>">
+                              <i class="fa fa-trash"></i></a> 
                         </td>
                     </tr>  
                     <!-- Modal Update-->
@@ -133,6 +135,35 @@
                         <!-- /.modal-dialog -->
                       </div>
                       <!-- /.modal -->                
+
+                       <!-- Modal Update-->
+                      <div class="modal fade" id="delete-<?php echo $id;?>">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title">Delete Product</h4>
+                              </div>
+                              <form role="form" method="POST" action="product_functions.php">
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                      
+                                      <input type="hidden" value="<?php echo $id;?>" name="id">
+                                      <p>Are you sure you want to delete product <?php echo $row['prod_name'];?>?</p>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                                  <button type="submit" class="btn btn-danger" name="delete">Delete</button>
+                                </div>
+                            </form>
+                            </div>
+                            <!-- /.modal-content -->
+                          </div>
+                          <!-- /.modal-dialog -->
+                        </div>
+                        <!-- /.modal -->                
                     <?php }?>
                   </tbody></table>
                 </div>

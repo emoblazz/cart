@@ -28,4 +28,13 @@ else if (isset($_POST['update']))
 	echo "<script>document.location='category.php'</script>";
 	
 }
+if (isset($_POST['delete']))
+{
+     $id = $_POST['id'];
+ 
+    mysqli_query($con,"delete from category where cat_id='$id'")or die(mysqli_error($con)); 
+
+     echo '<script>alert("Category Successfully Deleted")</script>';
+     echo  '<script>window.location = "category.php"</script>';
+}
 ?>

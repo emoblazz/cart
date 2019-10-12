@@ -98,4 +98,13 @@ elseif (isset($_POST['adddamage']))
      //echo '<script>alert("Category Successfully Saved")</script>';
      echo  '<script>window.location = "damaged.php"</script>';
 }
+else if (isset($_POST['delete']))
+{
+     $id = $_POST['id'];
+      mysqli_query($con,"delete from product where prod_id='$id'")
+   or die(mysqli_error($con)); 
+
+  echo "<script type='text/javascript'>alert('Product Successfully deleted!');</script>";
+  echo "<script>document.location='product.php'</script>";
+}
 ?>

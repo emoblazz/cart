@@ -110,9 +110,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Last 10 Transactions</h3>
-
-             
+              <h3 class="box-title">Search Result/s</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body table-responsive no-padding" id="example">
@@ -123,6 +121,11 @@
                   <th>Customer</th>
                   <th>Status</th>
                 </tr>
+                <?php
+                   $product=$_POST['product'];
+                   $queryp=mysqli_query($con,"SELECT * FROM `order` natural join customer where prod_name LIKE '%$product%' order by order_date desc")or die(mysqli_error($con));
+                         while ($rowp=mysqli_fetch_array($queryp)){
+                ?> 
                 <?php								
                         $queryo=mysqli_query($con,"SELECT * FROM `order` natural join customer order by order_date desc LIMIT 0,10")or die(mysqli_error($con));
                           while ($rowo=mysqli_fetch_array($queryo)){

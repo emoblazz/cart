@@ -66,15 +66,16 @@ License: You must have a valid license purchased only from themeforest (the abov
           <!-- BEGIN CONTENT -->
           <div class="col-md-9 col-sm-7">
             <div class="product-page">
-              <div class="row">
+
 <?php
          $product=$_POST['product'];
          $queryp=mysqli_query($con,"SELECT * FROM product natural join category where prod_name LIKE '%$product%'")or die(mysqli_error($con));
               while ($rowp=mysqli_fetch_array($queryp)){
 ?>                              
+              <div class="row">
                 <div class="col-md-6 col-sm-6">
                   <div class="product-main-image">
-                    <img src="dist/uploads/<?php echo $rowp['prod_pic'];?>" alt="Cool green dress with red bell" class="img-responsive" data-BigImgsrc="dist/uploads/<?php echo $rowp['prod_pic'];?>">
+                    <img src="dist/uploads/<?php echo $rowp['prod_pic'];?>" alt="<?php echo $rowp['prod_name'];?>" class="img-responsive" data-BigImgsrc="dist/uploads/<?php echo $rowp['prod_pic'];?>" style="width: 100px; height: 150px">
                   </div>
                 </div>
                 <div class="col-md-6 col-sm-6">
@@ -93,11 +94,11 @@ License: You must have a valid license purchased only from themeforest (the abov
                   
                   <div class="product-page-cart">
                     <?php 
-                  if (isset($session_id))
-                    echo "<a href='add_cart.php?prod_id=$rowp[prod_id]' class='btn btn-primary add2cart'>Add to cart</a>";
-                  else
-                    echo "<a href='' class='btn btn-default add2cart'>Login to Add</a>";
-                  ?>
+                      if (isset($session_id))
+                        echo "<a href='add_cart.php?prod_id=$rowp[prod_id]' class='btn btn-primary add2cart'>Add to cart</a>";
+                      else
+                        echo "<a href='' class='btn btn-default add2cart'>Login to Add</a>";
+                      ?>
                   </div>
                 </div>
               </div>
