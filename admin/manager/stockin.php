@@ -35,26 +35,18 @@
               <div class="box box-primary">
                 <div class="box-header">
                   <h3 class="box-title">Stockin List</h3>
-                  <div class="box-tools">
-                    <div class="input-group input-group-sm hidden-xs" style="width: 150px;">
-                      <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
-
-                      <div class="input-group-btn">
-                        <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-                      </div>
-                    </div>
-                  </div>
+                  
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body table-responsive no-padding">
-                  <table class="table table-hover">
-                    <tbody><tr>
+                  <table id="example1" class="table table-bordered table-hover">
+                    <thead>
                       <th>Product Name</th>
                       <th>Stockin Qty</th>
                       <th>Stockin Date</th>
                       <th>Expiry Date</th>
-                      
-                    </tr>
+                    </thead>
+                    <tbody>
                     <?php								
                       $query=mysqli_query($con,"SELECT * FROM stockin natural join product order by stockin_date desc")or die(mysqli_error($con));
                         while ($row=mysqli_fetch_array($query)){

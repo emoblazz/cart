@@ -32,27 +32,21 @@
                 <div class="box box-warning">
                   <div class="box-header">
                     <h3 class="box-title">Incoming Order List</h3>
-                    <div class="box-tools">
-                      <div class="input-group input-group-sm hidden-xs" style="width: 150px;">
-                        <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
-
-                        <div class="input-group-btn">
-                          <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-                        </div>
-                      </div>
-                    </div>
+                   
                   </div>
                   <!-- /.box-header -->
                   <div class="box-body table-responsive no-padding">
-                    <table class="table table-hover">
+                    <table id="example1" class="table table-bordered table-hover">
+                      <thead>
+                        <tr>
+                          <th>Ready</th>
+                          <th>Order ID</th>
+                          <th>Order Date</th>
+                          <th>Customer Name</th>
+                          <th>Amount Due</th>
+                        </tr>
+                      </thead>
                       <tbody>
-                      <tr>
-                        <th>Ready</th>
-                        <th>Order ID</th>
-                        <th>Order Date</th>
-                        <th>Customer Name</th>
-                        <th>Amount Due</th>
-                      </tr>
                       <?php								
                         $query=mysqli_query($con,"SELECT * FROM `order` natural join customer where order_status='pending' order by order_date")or die(mysqli_error($con));
                           while ($row=mysqli_fetch_array($query)){

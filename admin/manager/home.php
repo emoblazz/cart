@@ -116,13 +116,17 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body table-responsive no-padding" id="example">
-              <table class="table table-hover">
-                <tbody><tr>
+              <table id="example1" class="table table-bordered table-hover">
+                <thead>
+                  <tr>
                   <th>Order ID</th>
                   <th>Order Date</th>
                   <th>Customer</th>
                   <th>Status</th>
                 </tr>
+                </thead>
+                <tbody>
+
                 <?php								
                         $queryo=mysqli_query($con,"SELECT * FROM `order` natural join customer order by order_date desc LIMIT 0,10")or die(mysqli_error($con));
                           while ($rowo=mysqli_fetch_array($queryo)){

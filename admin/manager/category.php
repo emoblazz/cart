@@ -37,12 +37,13 @@
                   </div>
                   <!-- /.box-header -->
                   <div class="box-body table-responsive no-padding">
-                    <table class="table table-hover">
-                      <tbody><tr>
+                    <table id="example1" class="table table-bordered table-hover">
+                      <thead>
                         <th>Category</th>
                         <th>Active</th>
                         <th>Action</th>
-                      </tr>
+                      </thead>
+                      <tbody>
                       <?php								
                         $query=mysqli_query($con,"SELECT * FROM `category` order by cat_name")or die(mysqli_error($con));
                           while ($row=mysqli_fetch_array($query)){

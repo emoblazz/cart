@@ -11,6 +11,9 @@ if (isset($_POST['add']))
     mysqli_query($con,"INSERT INTO stockin(prod_id,stockin_qty,expiry,stockin_date,expiry_status) 
      VALUES('$product','$qty','$expiry','$date','')")or die(mysqli_error($con)); 
 
+     mysqli_query($con,"UPDATE product SET prod_qty=prod_qty+'$qty' where prod_id='$product'")
+      or die(mysqli_error($con)); 
+
      //echo '<script>alert("Category Successfully Saved")</script>';
      echo  '<script>window.location = "stockin.php"</script>';
 }

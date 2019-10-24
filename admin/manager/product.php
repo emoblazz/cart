@@ -34,20 +34,12 @@
               <div class="box box-warning">
                 <div class="box-header">
                   <h3 class="box-title">Product List</h3>
-                  <div class="box-tools">
-                    <div class="input-group input-group-sm hidden-xs" style="width: 150px;">
-                      <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
-
-                      <div class="input-group-btn">
-                        <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-                      </div>
-                    </div>
-                  </div>
+                  
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body table-responsive no-padding">
-                  <table class="table table-hover">
-                    <tbody><tr>
+                  <table id="example1" class="table table-bordered table-hover">
+                    <thead>
                       <th>Image</th>
                       <th>Product Name</th>
                       <th>Description</th>
@@ -56,7 +48,8 @@
                       <th>Product Qty</th>
                       <th>Reorder</th>
                       <th>Action</th>
-                    </tr>
+                    </thead>
+                    <tbody>
                     <?php								
                       $query=mysqli_query($con,"SELECT * FROM `product` natural join category order by prod_name")or die(mysqli_error($con));
                         while ($row=mysqli_fetch_array($query)){

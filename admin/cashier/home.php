@@ -37,12 +37,13 @@
             <!-- /.box-header -->
             <div class="box-body table-responsive no-padding">
               <table class="table table-hover">
-                <tbody><tr>
+                <thead>
                   <th>Order ID</th>
                   <th>Order Date</th>
                   <th>Customer</th>
                   <th>Pay</th>
-                </tr>
+                </thead>
+                <tbody>
                 <?php								
                         $queryo=mysqli_query($con,"SELECT * FROM `order` natural join customer where order_status='for pickup' order by order_date")or die(mysqli_error($con));
                           while ($rowo=mysqli_fetch_array($queryo)){

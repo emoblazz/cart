@@ -35,8 +35,9 @@
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body table-responsive no-padding">
-                  <table class="table table-hover">
-                    <tbody><tr>
+                  <table id="example1" class="table table-bordered table-hover">
+                   <thead>
+                    <tr>
                       <th>Image</th>
                       <th>Name</th>
                       <th>Address</th>
@@ -44,6 +45,8 @@
                       <th>Date Registered</th>
                       <th>View Orders</th>
                     </tr>
+                  </thead>
+                  <tbody>
                     <?php								
                       $query=mysqli_query($con,"SELECT * FROM `customer` order by cust_name")or die(mysqli_error($con));
                         while ($row=mysqli_fetch_array($query)){
