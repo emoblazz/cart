@@ -32,27 +32,18 @@
                 <div class="box box-warning">
                   <div class="box-header">
                     <h3 class="box-title">Ready For Pickup Order List</h3>
-                    <div class="box-tools">
-                      <div class="input-group input-group-sm hidden-xs" style="width: 150px;">
-                        <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
-
-                        <div class="input-group-btn">
-                          <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-                        </div>
-                      </div>
-                    </div>
                   </div>
                   <!-- /.box-header -->
                   <div class="box-body table-responsive no-padding">
-                    <table class="table table-hover">
-                      <tbody>
-                      <tr>
+                    <table id="example1" class="table table-bordered table-hover">
+                      <thead>
                         <th>Ready</th>
                         <th>Order ID</th>
                         <th>Order Date</th>
                         <th>Customer Name</th>
                         <th>Amount Due</th>
-                      </tr>
+                      </thead>
+                      <tbody>
                       <?php								
                         $query=mysqli_query($con,"SELECT * FROM `order` natural join customer where order_status='for pickup' order by order_date")or die(mysqli_error($con));
                           while ($row=mysqli_fetch_array($query)){
@@ -84,12 +75,13 @@
                           <td><?php echo $row1['qty'];?></td>
                           <td><?php echo $row1['prod_name'];?></td>
                           <td><?php echo $row1['price'];?></td>
-                          <td><?php echo $row1['total'];?></td>
+                          <td colspan="2"><?php echo $row1['total'];?></td>
                       </tr>  
                       <?php }?>
                                     
                       <?php }?>
-                    </tbody></table>
+                    </tbody>
+                  </table>
                   </div>
                   <!-- /.box-body -->
                 </div>

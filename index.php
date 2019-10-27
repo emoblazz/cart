@@ -30,7 +30,7 @@
     <!-- Header END -->
 
     <!-- BEGIN SLIDER -->
-    <?php include "dist/includes/shop-slider.php";?>
+    <?php //include "dist/includes/shop-slider.php";?>
     
     <!-- END SLIDER -->
 
@@ -136,7 +136,7 @@
                               <form role="form">
                                 <div class="modal-body">
                                     <div class="form-group">
-                                      <p>"Thank you for visiting our online grocery store but this is only for people who they have taken their order among the store once again. Thank You"<br>
+                                      <p>*Thank you for visiting our online grocery store but this is only for people who they have taken their order among the store once again. Thank You*<br>
                                         by: Fatima Cornel
                                       </p>
                                     </div>
@@ -146,7 +146,7 @@
                                           Victorias Commercial Center (Shopping Malls)<br>
                                         @ Yap Quina Street, Victorias City, Negros Occidental, Philippines<br>
 
-                                      "Cornel Grocery Store at the left side"
+                                      *Cornel Grocery Store at the left side*
                                       </p>
                                     </div>
                                 </div>

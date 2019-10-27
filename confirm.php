@@ -1,7 +1,7 @@
 <?php
 	 include 'dist/includes/session.php';      
      include 'dist/includes/dbcon.php';     
-
+     date_default_timezone_set("Asia/Manila"); 
      $date=date('Y-m-d H:i:s');
 
 		mysqli_query($con,"INSERT INTO `order`(cust_id,order_date) 

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <?php include '../dist/includes/head.php';?>

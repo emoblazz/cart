@@ -14,7 +14,7 @@
       <!-- Content Header (Page header) -->
       <section class="content-header">
         <h1>
-          Sales
+          Daily Sales
         </h1>
         <ol class="breadcrumb">
           <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -32,7 +32,7 @@
               <div class="col-xs-12 col-md-12">
                 <div class="box box-primary">
                   <div class="box-header">
-                    <h3 class="box-title">Sales</h3>
+                    <h3 class="box-title">Daily Sales</h3>
                     <div class="box-tools">
                     <form method="post" action="">
                       <div class="input-group input-group-sm hidden-xs" style="width: 250px;">
@@ -47,14 +47,15 @@
              
                         <div class="input-group-btn">
                           <button type="submit" class="btn btn-default" name="search"><i class="fa fa-search"></i></button>
+
                         </div>
                       </div>
                     </div></form>
                   </div>
                   
                   <!-- /.box-header -->
-                  <div class="box-body table-responsive no-padding">
-                    <table class="table table-hover">
+                  <div class="box-body">
+                    <table class="table">
                       <tbody>
                       <tr>
                         <th>Date</th>
@@ -74,9 +75,9 @@
                           while ($row=mysqli_fetch_array($query)){
                          
                       ?>    
-                      <tr class="box box-success">
-                          <td class="text-aqua"><?php echo $row['date'];?></td>
-                          <td class="text-aqua"><?php echo $row['total'];?></td>
+                      <tr class="box">
+                          <td class=""><?php echo $row['date'];?></td>
+                          <td class=""><?php echo $row['total'];?></td>
                       </tr> 
                                     
                       <?php }}?>

@@ -13,15 +13,11 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Damaged Product
-        <a class="btn btn-app btn-primary text-blue" data-toggle="modal" data-target="#modal-add">
-            <i class="fa fa-plus-square"></i> ADD
-          </a>
+        Good Condition Products
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="">Product</li>
-        <li class="active">Damaged</li>
+        <li class="active">Good Condition</li>
       </ol>
     </section>
 
@@ -32,30 +28,30 @@
         <section class="content">
           <div class="row">
             <div class="col-xs-12 col-md-12">
-              <div class="box box-primary">
+              <div class="box box-warning">
                 <div class="box-header">
-                  <h3 class="box-title">Damaged Product List</h3>
+                  <h3 class="box-title">Good Condition Product List</h3>
                   
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body table-responsive no-padding">
-                  <table class="table table-hover">
-                    <tbody><tr>
+                  <table id="" class="table table-bordered table-hover">
+                    <thead>
                       <th>Product Name</th>
-                      <th>Qty</th>
-                      <th>Date</th>
-                    
-                    </tr>
+                      <th>Description</th>
+                      <th>Product Qty</th>
+                    </thead>
+                    <tbody>
                     <?php								
-                      $query=mysqli_query($con,"SELECT * FROM `product` natural join damaged order by declared_date desc")or die(mysqli_error($con));
+                      $query=mysqli_query($con,"SELECT * FROM `product` natural join category where prod_qty>0 order by prod_name")or die(mysqli_error($con));
                         while ($row=mysqli_fetch_array($query)){
-                       //   $id=$row['damaged_id'];					
+                          $id=$row['prod_id'];					
                          
                     ?>    
                     <tr>
                         <td><?php echo $row['prod_name'];?></td>
-                        <td><?php echo $row['damage_qty'];?></td>
-                        <td><?php echo $row['declared_date'];?></td>
+                        <td><?php echo $row['prod_desc'];?></td>
+                        <td><?php echo $row['prod_qty'];?></td>
                     </tr>  
                     <!-- Modal Update-->
                     <div class="modal fade" id="modal-<?php echo $id;?>">
@@ -64,9 +60,9 @@
                             <div class="modal-header">
                               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span></button>
-                              <h4 class="modal-title">Update Damaged Product</h4>
+                              <h4 class="modal-title">Update Product</h4>
                             </div>
-                            <form role="form" method="POST" action="product_functions.php">
+                            <form role="form" method="POST" action="product_functions.php" enctype='multipart/form-data'>
                               <div class="modal-body">
                                   <div class="form-group">
                                     <label for="exampleInputEmail1">Product Name</label>
@@ -97,10 +93,15 @@
                                     <label for="exampleInputEmail1">Reorder</label>
                                     <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Reorder Point of Product" name="reorder" value="<?php echo $row['reorder'];?>">
                                   </div>
+                                  <div class="form-group">
+                                    <label for="exampleInputEmail1">Image</label>
+                                    <input type="hidden" class="form-control" id="image" name="image1" value="<?php echo $row['prod_pic'];?>"> 
+                                    <input type="file" class="form-control" name="image" id="title">
+                                  </div>
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-primary" name="updatedamage">Save changes</button>
+                                <button type="submit" class="btn btn-warning" name="update">Save changes</button>
                               </div>
                           </form>
                           </div>
@@ -109,6 +110,35 @@
                         <!-- /.modal-dialog -->
                       </div>
                       <!-- /.modal -->                
+
+                       <!-- Modal Update-->
+                      <div class="modal fade" id="delete-<?php echo $id;?>">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title">Delete Product</h4>
+                              </div>
+                              <form role="form" method="POST" action="product_functions.php">
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                      
+                                      <input type="hidden" value="<?php echo $id;?>" name="id">
+                                      <p>Are you sure you want to delete product <?php echo $row['prod_name'];?>?</p>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                                  <button type="submit" class="btn btn-danger" name="delete">Delete</button>
+                                </div>
+                            </form>
+                            </div>
+                            <!-- /.modal-content -->
+                          </div>
+                          <!-- /.modal-dialog -->
+                        </div>
+                        <!-- /.modal -->                
                     <?php }?>
                   </tbody></table>
                 </div>
@@ -124,29 +154,46 @@
                             <div class="modal-header">
                               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span></button>
-                              <h4 class="modal-title">Add Damaged Product</h4>
+                              <h4 class="modal-title">Add Product</h4>
                             </div>
-                            <form role="form" method="POST" action="product_functions.php">
+                            <form role="form" method="POST" action="product_functions.php" enctype='multipart/form-data'>
                               <div class="modal-body">
                                   <div class="form-group">
+                                    <label for="exampleInputEmail1">Product Name</label>
+                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Name of Product" name="name" required>
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="exampleInputEmail1">Description</label>
+                                    <textarea class="form-control" id="exampleInputEmail1" placeholder="Enter Description of Product" name="desc"></textarea>
+                                  </div>
+                                  <div class="form-group">
                                     <label for="exampleInputEmail1">Category</label>
-                                    <select class="form-control select2" style="width: 100%;" name="name">
+                                    <select class="form-control select2" style="width: 100%;" name="category">
                                     <?php								
-                                        $query1=mysqli_query($con,"SELECT * FROM `product` order by prod_name")or die(mysqli_error($con));
+                                        $query1=mysqli_query($con,"SELECT * FROM `category` order by cat_name")or die(mysqli_error($con));
                                           while ($row1=mysqli_fetch_array($query1)){
                                     ?>
-                                      <option value="<?php echo $row1['prod_id'];?>"><?php echo $row1['prod_name'];?></option>
+                                      <option value="<?php echo $row1['cat_id'];?>"><?php echo $row1['cat_name'];?></option>
                                     <?php }?>
                                     </select>
                                   </div>
                                   <div class="form-group">
-                                    <label for="exampleInputEmail1">Qty</label>
-                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Declared Damaged Qty of Product" name="qty">
+                                    <label for="exampleInputEmail1">Price</label>
+                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Price of Product" name="price">
                                   </div>
+                                  <div class="form-group">
+                                    <label for="exampleInputEmail1">Reorder</label>
+                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Reorder Point of Product" name="reorder">
+                                  </div>
+                                  <div class="form-group">
+                                  <div class="form-line"> 
+                                    <input type="file" class="form-control" name="image" id="title">
+                                  </div>
+                              </div>   
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-primary" name="adddamage">Save</button>
+                                <button type="submit" class="btn btn-warning" name="add">Save</button>
                               </div>
                           </form>
                           </div>

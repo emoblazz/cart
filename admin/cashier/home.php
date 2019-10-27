@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <?php include '../dist/includes/head.php';?>
-<body class="hold-transition sidebar-mini skin-black">
+<body class="hold-transition sidebar-mini">
 <div class="wrapper">
   <?php include '../dist/includes/header.php';?>
   

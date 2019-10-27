@@ -26,7 +26,7 @@
     <?php //include 'dist/includes/section.php';?>
         <!-- /.Left col -->
         <!-- right col (We are only adding the ID to make the widgets sortable)-->
-        <section class="col-lg-12 connectedSortable">
+      <section>
         <div class="row">
           <div class="col-xs-12">
             <?php	
@@ -40,7 +40,7 @@
                         $rowd=mysqli_fetch_array($queryd);
                           $damaged=$rowd['damaged'];		
                         
-                      $querye=mysqli_query($con,"SELECT *,SUM(expire_qty) as expired FROM `expired` natural join stockin where MONTH(expiry)='$month' and YEAR(expiry)='$year'")or die(mysqli_error($con));
+                      $querye=mysqli_query($con,"SELECT *,SUM(expire_qty) as expired FROM `expired` natural join stockin where MONTH(expiry)='$month' and YEAR(expiry)='$year' and expiry_status='expired'")or die(mysqli_error($con));
                         $rowe=mysqli_fetch_array($querye);
                           $expired=$rowe['expired'];					
                       
@@ -49,73 +49,74 @@
                           $near=$rown['near'];		
                      
                          $total=$good+$damaged+$expired;
+                         
                 ?> 
               <div class="col-md-3 col-xs-12">
-              <div class="box box-success box-solid">
-                <div class="box-header with-border">
-                  <h3 class="box-title">Good Condition (<?php echo number_format(($good/$total)*100,2);?>%)</h3>
+                <div class="box box-success box-solid">
+                  <div class="box-header with-border">
+                    <h3 class="box-title">Good Condition (<?php echo number_format(($good/$total)*100,2);?>%)</h3>
+                  </div>
+                  <!-- /.box-header -->
+                  <div class="box-body" style="">
+                    Total Reported Items: <?php echo $good;?><hr>
+                    <a href="good.php"><i class="fa fa-list"></i> View Items </a>
+                  </div>
+                  <!-- /.box-body -->
                 </div>
-                <!-- /.box-header -->
-                <div class="box-body" style="">
-                  Total Reported Items: <?php echo $good;?><hr>
-                  <a href="product.php"><i class="fa fa-list"></i> View Items </a>
-                </div>
-                <!-- /.box-body -->
-              </div>
               <!-- /.box -->
-            </div>
-            <div class="col-md-3 col-xs-12">
-              <div class="box box-warning box-solid">
-                <div class="box-header with-border">
-                  <h3 class="box-title">Soon to Expire (<?php echo number_format(($near/$total)*100,2);?>%)</h3>
-                </div>
-                <!-- /.box-header -->
-                <div class="box-body" style="">
-                  Total Reported Items: <?php echo $near;?><hr>
-                  <a href="near.php"><i class="fa fa-list"></i> View Items </a>
-                </div>
-                <!-- /.box-body -->
               </div>
-              <!-- /.box -->
-            </div>
-            <div class="col-md-3 col-xs-12">
-              <div class="box box-danger box-solid">
-                <div class="box-header with-border">
-                  <h3 class="box-title">Expired (<?php echo number_format(($expired/$total)*100,2);?>%)</h3>
+              <div class="col-md-3 col-xs-12">
+                <div class="box box-warning box-solid">
+                  <div class="box-header with-border">
+                    <h3 class="box-title">Soon to Expire (<?php echo number_format(($near/$total)*100,2);?>%)</h3>
+                  </div>
+                  <!-- /.box-header -->
+                  <div class="box-body" style="">
+                    Total Reported Items: <?php echo $near;?><hr>
+                    <a href="near.php"><i class="fa fa-list"></i> View Items </a>
+                  </div>
+                  <!-- /.box-body -->
                 </div>
-                <!-- /.box-header -->
-                <div class="box-body" style="">
-                  Total Reported Items: <?php echo $expired;?><hr>
-                  <a href="expired.php"><i class="fa fa-list"></i> View Items </a>
-                </div>
-                <!-- /.box-body -->
+                <!-- /.box -->
               </div>
-              <!-- /.box -->
-            </div>
-            <div class="col-md-3 col-xs-12">
-              <div class="box box-danger box-solid">
-                <div class="box-header with-border">
-                  <h3 class="box-title">Damaged (<?php echo number_format(($damaged/$total)*100,2);?>%)</h3>
+              <div class="col-md-3 col-xs-12">
+                <div class="box box-danger box-solid">
+                  <div class="box-header with-border">
+                    <h3 class="box-title">Expired (<?php echo number_format(($expired/$total)*100,2);?>%)</h3>
+                  </div>
+                  <!-- /.box-header -->
+                  <div class="box-body" style="">
+                    Total Reported Items: <?php echo $expired;?><hr>
+                    <a href="expired.php"><i class="fa fa-list"></i> View Items </a>
+                  </div>
+                  <!-- /.box-body -->
                 </div>
-                <!-- /.box-header -->
-                <div class="box-body" style="">
-                  Total Reported Items: <?php echo $damaged;?><hr>
-                  <a href="damaged.php"><i class="fa fa-list"></i> View Items </a>
-                </div>
-                <!-- /.box-body -->
+                <!-- /.box -->
               </div>
-              <!-- /.box -->
-            </div>
-       </div> 
+              <div class="col-md-3 col-xs-12">
+                <div class="box box-danger box-solid">
+                  <div class="box-header with-border">
+                    <h3 class="box-title">Damaged (<?php echo number_format(($damaged/$total)*100,2);?>%)</h3>
+                  </div>
+                  <!-- /.box-header -->
+                  <div class="box-body" style="">
+                    Total Reported Items: <?php echo $damaged;?><hr>
+                    <a href="damaged.php"><i class="fa fa-list"></i> View Items </a>
+                  </div>
+                  <!-- /.box-body -->
+                </div>
+                <!-- /.box -->
+              </div>
+        </div> 
+      </div> 
+   
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
               <h3 class="box-title">Last 10 Transactions</h3>
-
-             
             </div>
             <!-- /.box-header -->
-            <div class="box-body table-responsive no-padding" id="example">
+            <div class="box-body table-responsive no-padding">
               <table id="example1" class="table table-bordered table-hover">
                 <thead>
                   <tr>
@@ -153,7 +154,6 @@
           <!-- /.box -->
         </div>
       </div>
-
         </section>
         <!-- right col -->
       </div>

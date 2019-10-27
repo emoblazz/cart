@@ -20,9 +20,6 @@
           <a href="#">
             <i class="fa fa-files-o text-orange"></i>
             <span>Orders</span>
-            <span class="pull-right-container">
-              <span class="label label-warning pull-right">4</span>
-            </span>
           </a>
           <ul class="treeview-menu">
             <li><a href="incoming.php"><i class="fa fa-shopping-cart text-orange"></i> Incoming</a></li>
@@ -44,6 +41,11 @@
             <li><a href="category.php"><i class="fa fa-tags text-orange"></i> Category</a></li>
             <li><a href="stockin.php"><i class="fa fa-external-link text-orange"></i> Stockin</a></li>
             <li><a href="supplier.php"><i class="fa fa-users text-orange"></i> Supplier</a></li>
+            <li><a href="near.php"><i class="fa fa-calendar-minus-o text-orange"></i> Near Expiry</a></li>
+            <li><a href="expired.php"><i class="fa fa-calendar-times-o text-orange"></i> Expired</a></li>
+            <li><a href="damaged.php"><i class="fa fa-chain-broken text-orange"></i> Damaged</a></li>
+            <li><a href="out.php"><i class="fa fa-sign-out text-orange"></i> Out of Stock</a></li>
+            <li><a href="reorder.php"><i class="fa fa-bullhorn text-orange"></i> Low Inventory</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -56,6 +58,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="user.php"><i class="fa fa-users text-orange"></i> User</a></li>
+
           </ul>
         </li>
         <li class="treeview">
@@ -66,11 +69,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="near.php"><i class="fa fa-calendar-minus-o text-orange"></i> Near Expiry</a></li>
-            <li><a href="expired.php"><i class="fa fa-calendar-times-o text-orange"></i> Expired</a></li>
-            <li><a href="damaged.php"><i class="fa fa-chain-broken text-orange"></i> Damaged</a></li>
-            <li><a href="out.php"><i class="fa fa-sign-out text-orange"></i> Out of Stock</a></li>
-            <li><a href="reorder.php"><i class="fa fa-bullhorn text-orange"></i> Low Inventory</a></li>
+            
             <li><a href="sales.php?year=2019"><i class="fa fa-bar-chart text-orange"></i> Sales 2019</a></li>
             <li><a href="sales.php?year=2020"><i class="fa fa-bar-chart text-orange"></i> Sales 2020</a></li>
             <li><a href="sales.php?year=2021"><i class="fa fa-bar-chart text-orange"></i> Sales 2021</a></li>
