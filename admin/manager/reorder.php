@@ -48,6 +48,7 @@
                     <tbody><tr>
                       <th>Product Name</th>
                       <th>Desciption</th>
+                      <th>Category</th>
                       <th>Qty</th>
                       <th>Reorder</th>
                     </tr>
@@ -59,6 +60,7 @@
                     <tr>
                         <td><?php echo $row['prod_name'];?></td>
                         <td><?php echo $row['prod_desc'];?></td>
+                        <td><?php echo $row['cat_name'];?></td>
                         <td><?php echo $row['prod_qty'];?></td>
                         <td><?php echo $row['reorder'];?></td>
                     </tr>  

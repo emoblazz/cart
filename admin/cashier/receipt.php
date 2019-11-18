@@ -109,7 +109,10 @@ Yap Quina Street, Victorias City, Negros Occidental, Philippines
                     <th>Change</th>
                     <td><?php echo $row['change'];?></td>
                   </tr>
-                </tbody></table>
+                  
+                </tbody></table><br>
+                Prepared by: <br><br><?php echo $name;?>
+                    
               </div>
               <!-- /.box-body -->
             </div>

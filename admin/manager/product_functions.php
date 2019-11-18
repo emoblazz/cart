@@ -107,4 +107,27 @@ else if (isset($_POST['delete']))
   echo "<script type='text/javascript'>alert('Product Successfully deleted!');</script>";
   echo "<script>document.location='product.php'</script>";
 }
+elseif (isset($_POST['add_prod_sup']))
+{
+     $product = $_POST['product'];
+     $supplier = $_POST['supplier'];
+     $price = $_POST['price'];
+     
+    mysqli_query($con,"INSERT INTO prod_sup(prod_id,supplier_id,supplier_price) 
+     VALUES('$product','$supplier','$price')")or die(mysqli_error($con)); 
+
+     echo  '<script>window.location = "product_supplier.php"</script>';
+}
+elseif (isset($_POST['update_prod_sup']))
+{
+    $id = $_POST['id'];
+     $product = $_POST['product'];
+     $supplier = $_POST['supplier'];
+     $price = $_POST['price'];
+
+     mysqli_query($con,"UPDATE prod_sup SET prod_id = '$product',supplier_id='$supplier',supplier_price='$price' where prod_sup_id='$id'")
+   or die(mysqli_error($con)); 
+     //echo '<script>alert("Category Successfully Saved")</script>';
+     echo  '<script>window.location = "product_supplier.php"</script>';
+}
 ?>

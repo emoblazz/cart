@@ -14,4 +14,5 @@ $user_query = mysqli_query($con,"select * from user where user_id = '$session_id
 $user_row = mysqli_fetch_array($user_query);
 $session_name = $user_row['user_name'];
 $session_type = $user_row['user_type'];
+$name = $user_row['username'];
 ?>

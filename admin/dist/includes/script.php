@@ -71,6 +71,10 @@
 
     //Date range picker
     $('#reservation').daterangepicker()
+    //Date range picker
+    $('#reservation2').daterangepicker()
+    //Date range picker
+    $('#reservation3').daterangepicker()
     //Date range picker with time picker
     $('#reservationtime').daterangepicker({ timePicker: true, timePickerIncrement: 30, locale: { format: 'MM/DD/YYYY hh:mm A' }})
     //Date range as a button

@@ -13,12 +13,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Out of Stock Products
+        Sold Out Products
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="">Report</li>
-        <li class="active">Out of Stock</li>
+        <li class="active">Sold Out</li>
       </ol>
     </section>
 
@@ -31,7 +31,7 @@
             <div class="col-xs-12 col-md-12">
               <div class="box box-primary">
                 <div class="box-header">
-                  <h3 class="box-title">Out of Stock Product List</h3>
+                  <h3 class="box-title">Sold Out Product List</h3>
                   <div class="box-tools">
                     <div class="input-group input-group-sm hidden-xs" style="width: 150px;">
                       <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
@@ -46,6 +46,7 @@
                 <div class="box-body table-responsive no-padding">
                   <table class="table table-hover">
                     <tbody><tr>
+                      <th>Qty</th>
                       <th>Product Name</th>
                       <th>Desciption</th>
                     </tr>
@@ -55,6 +56,7 @@
                          // $id=$row['stockin_id'];					
                     ?>    
                     <tr>
+                        <td><?php echo $row['prod_qty'];?></td>
                         <td><?php echo $row['prod_name'];?></td>
                         <td><?php echo $row['prod_desc'];?></td>
                     </tr>  
